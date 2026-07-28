@@ -23,9 +23,21 @@ The architecture is designed to provide:
 
 # 🏗️ Solution Architecture
 
-> **Architecture Diagram**
+![AWS Solution Architecture](architecture/aws-solution-architecture.png)
 
-*(The architecture diagram will be added here in the next step.)*
+## 🔄 Request Flow
+
+The application processes client requests through a secure and highly available architecture:
+
+1. Users access the application using **Amazon Route 53**.
+2. **Amazon CloudFront** serves cached static content and forwards dynamic requests.
+3. **AWS WAF** filters malicious traffic before it reaches the application.
+4. The **Application Load Balancer (ALB)** distributes requests across healthy EC2 instances.
+5. **Amazon EC2** instances run inside private subnets and scale automatically using an **Auto Scaling Group (ASG)**.
+6. Application data is stored in **Amazon RDS Multi-AZ**, providing automatic failover and high availability.
+7. **Amazon CloudWatch** collects metrics and logs from AWS resources.
+8. **Amazon SNS** sends notifications when alarms are triggered.
+9. **AWS Systems Manager Session Manager** provides secure administrative access without exposing SSH to the internet.
 
 ---
 
