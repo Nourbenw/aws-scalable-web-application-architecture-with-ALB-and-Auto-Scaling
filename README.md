@@ -1,8 +1,26 @@
 # 🚀 Scalable Web Application with ALB and Auto Scaling
 
+
 A production-grade AWS architecture demonstrating how to deploy a highly available, scalable, and secure web application using Amazon Web Services (AWS).
 
 This project follows AWS Well-Architected Framework best practices and implements a multi-tier architecture across multiple Availability Zones.
+
+---
+
+# 📋 Project Information
+
+| Item | Details |
+|------|---------|
+| Project Name | Scalable Web Application with ALB and Auto Scaling |
+| Cloud Provider | Amazon Web Services (AWS) |
+| Architecture | Multi-AZ Production Architecture |
+| Compute | Amazon EC2 + Auto Scaling Group |
+| Load Balancer | Application Load Balancer (ALB) |
+| Database | Amazon RDS Multi-AZ |
+| CDN | Amazon CloudFront |
+| Security | AWS WAF, Security Groups, Network ACLs |
+| Monitoring | Amazon CloudWatch & Amazon SNS |
+| DNS | Amazon Route 53 |
 
 ---
 
@@ -21,60 +39,76 @@ The architecture is designed to provide:
 
 ---
 
+# ✨ Key Features
+
+- Highly Available Multi-AZ Architecture
+- Auto Scaling Compute Layer
+- Application Load Balancer
+- Amazon RDS Multi-AZ
+- AWS WAF Protection
+- CloudFront Content Delivery
+- Secure Networking with Public & Private Subnets
+- Monitoring with Amazon CloudWatch
+- Notifications using Amazon SNS
+- Secure Administration using AWS Systems Manager Session Manager
+
+---
+
 # 🏗️ Solution Architecture
 
 ![AWS Solution Architecture](architecture/aws-solution-architecture.png)
 
 ## 🔄 Request Flow
 
-The application processes client requests through a secure and highly available architecture:
+The application processes client requests through a secure and highly available architecture.
 
 1. Users access the application using **Amazon Route 53**.
-2. **Amazon CloudFront** serves cached static content and forwards dynamic requests.
-3. **AWS WAF** filters malicious traffic before it reaches the application.
-4. The **Application Load Balancer (ALB)** distributes requests across healthy EC2 instances.
-5. **Amazon EC2** instances run inside private subnets and scale automatically using an **Auto Scaling Group (ASG)**.
+2. **Amazon CloudFront** caches static assets and forwards dynamic requests.
+3. **AWS WAF** inspects requests and blocks malicious traffic.
+4. The **Application Load Balancer (ALB)** distributes traffic across healthy EC2 instances.
+5. **Amazon EC2** instances run inside private subnets and are managed by an **Auto Scaling Group (ASG)**.
 6. Application data is stored in **Amazon RDS Multi-AZ**, providing automatic failover and high availability.
-7. **Amazon CloudWatch** collects metrics and logs from AWS resources.
-8. **Amazon SNS** sends notifications when alarms are triggered.
+7. **Amazon CloudWatch** collects metrics and logs.
+8. **Amazon SNS** sends alerts and notifications.
 9. **AWS Systems Manager Session Manager** provides secure administrative access without exposing SSH to the internet.
 
 ---
 
 # ☁️ AWS Services Used
 
-| Service | Purpose |
-|----------|---------|
+| AWS Service | Purpose |
+|-------------|---------|
 | Amazon VPC | Network isolation |
 | Amazon EC2 | Application servers |
 | Auto Scaling Group | Automatic scaling |
 | Application Load Balancer | Traffic distribution |
-| Amazon CloudFront | Global CDN |
-| AWS WAF | Web application firewall |
-| Amazon Route 53 | DNS & Health Checks |
-| Amazon RDS Multi-AZ | Highly available database |
-| AWS Systems Manager | Secure instance access |
-| Amazon CloudWatch | Monitoring |
-| Amazon SNS | Notifications |
+| Amazon CloudFront | Global Content Delivery Network |
+| AWS WAF | Web Application Firewall |
+| Amazon Route 53 | DNS and Health Checks |
+| Amazon RDS Multi-AZ | Highly Available Database |
+| AWS Systems Manager | Secure administrative access |
+| Amazon CloudWatch | Monitoring and Logging |
+| Amazon SNS | Alert Notifications |
 
 ---
 
 # 🌐 Architecture Features
 
 - Multi-AZ Deployment
-- Public & Private Subnets
+- Public and Private Subnets
 - Internet Gateway
 - NAT Gateway
 - Route Tables
-- Security Groups
 - Network ACLs
-- Auto Scaling
+- Security Groups
 - Application Load Balancer
+- Auto Scaling Group
+- Amazon RDS Multi-AZ
 - CloudFront CDN
 - AWS WAF Protection
-- RDS Multi-AZ
 - Session Manager
 - CloudWatch Monitoring
+- Amazon SNS Notifications
 
 ---
 
@@ -83,22 +117,69 @@ The application processes client requests through a secure and highly available 
 ```text
 .
 ├── architecture/
+│   └── aws-solution-architecture.png
+│
 ├── documentation/
+│   ├── architecture-overview.md
+│   ├── networking-design.md
+│   ├── security-design.md
+│   ├── compute-design.md
+│   ├── load-balancer.md
+│   ├── autoscaling.md
+│   ├── database-design.md
+│   ├── monitoring.md
+│   └── deployment-guide.md
+│
 ├── infrastructure/
 ├── screenshots/
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-# 📌 Project Status
+# 📚 Documentation
 
-🚧 In Progress
+Detailed project documentation is available in the **documentation/** directory.
 
-This repository is being updated step by step while building the complete AWS infrastructure.
+Included documents:
+
+- Architecture Overview
+- Networking Design
+- Security Design
+- Compute Layer Design
+- Load Balancer Design
+- Auto Scaling Design
+- Database Design
+- Monitoring and Logging
+- Deployment Guide
 
 ---
 
-# 📄 License
+# 📌 Project Status
 
-This project is for educational and portfolio purposes.
+🚧 **Architecture & Documentation Completed**
+
+The project architecture and technical documentation have been completed.
+
+Infrastructure deployment, Terraform implementation, and AWS Console screenshots will be added in a future phase once an AWS environment is available.
+
+---
+
+# 🔮 Future Improvements
+
+Planned enhancements include:
+
+- Infrastructure as Code using Terraform
+- CI/CD with GitHub Actions
+- HTTPS using AWS Certificate Manager (ACM)
+- AWS Secrets Manager
+- Amazon ElastiCache
+- Blue/Green Deployments
+- AWS Backup
+- AWS GuardDuty
+- AWS Config
+- Cost Optimization Dashboard
+
+---
+
