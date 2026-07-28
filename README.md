@@ -56,7 +56,7 @@ The architecture is designed to provide:
 
 # 🏗️ Solution Architecture
 
-![AWS Solution Architecture](architecture/aws-solution-architecture.png)
+![AWS Solution Architecture](architecture/aws-solution-architecture.png.png)
 
 ## 🔄 Request Flow
 
